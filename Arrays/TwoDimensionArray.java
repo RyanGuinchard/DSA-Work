@@ -41,6 +41,33 @@ public class TwoDimensionArray {
         }
     }
 
+    // Search
+    public void Search(int value) {
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                for (int j = 0; j < arr[0].length; j++) {
+                    if (arr[i][j] == value) {
+                        System.out.println("Value found at location: " + i + ", " + j);
+                        return;
+                    }
+                }
+            }
+            System.out.println("Value not found in the array.");
+        } catch (Exception e) {
+            System.out.println("Array does not exist!");
+        }
+    }
+
+    // Delete value
+    public void Delete(int row, int col) {
+        try {
+            arr[row][col] = Integer.MIN_VALUE;
+            System.out.println("Successfully deleted value from location: " + row + ", " + col);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Invalid index to access array!");
+        }
+    }
+
     public static void main(String[] args) {
         TwoDimensionArray tda = new TwoDimensionArray(0, 0);
     }
