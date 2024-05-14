@@ -1,6 +1,5 @@
 package Arrays;
 import java.util.Scanner;
-import java.util.Arrays;
 
 /**  //Calculate the avarage temperature, and give how many days are above the average temperature
 
@@ -65,7 +64,9 @@ public class AverageTemp {
             }
         }
         System.out.println("The number of days above the average temperature is: " + count);
+        scanner.close();
 
     }
+    
     
 }
