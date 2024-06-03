@@ -23,14 +23,14 @@ public class SingleLinkedList {
     }
 
     // insert into a linked list
-        // 1. If link is empty
-        // 2. inserting at beginning
-        // 3. inserting at end
-        // 4. inserting anywhere
-    public void insert(int nodeValue, int location){
+    // 1. If link is empty
+    // 2. inserting at beginning
+    // 3. inserting at end
+    // 4. inserting anywhere
+    public void insert(int nodeValue, int location) {
         Node node = new Node();
         node.value = nodeValue;
-        if(head == null) {
+        if (head == null) {
             createLinkedList(nodeValue);
             return;
         } else if (location == 0) {
@@ -43,12 +43,14 @@ public class SingleLinkedList {
         } else {
             Node tempNode = head;
             int index = 0;
-            while(index < location - 1) {
+            while (index < location - 1) {
                 tempNode = tempNode.next;
                 index++;
             }
-             // Correct implementation: nextNode is the node currently at the insertion location.
-            // The new node is inserted between tempNode and nextNode, avoiding a null pointer error.
+            // Correct implementation: nextNode is the node currently at the insertion
+            // location.
+            // The new node is inserted between tempNode and nextNode, avoiding a null
+            // pointer error.
             Node nextNode = tempNode.next;
             tempNode.next = node;
             node.next = nextNode;
@@ -58,13 +60,13 @@ public class SingleLinkedList {
 
     // Traverse a linked list
     public void traverse() {
-        if(head == null) {
+        if (head == null) {
             System.out.println("Linked list does not exist");
         } else {
             Node tempNode = head;
-            for(int i = 0; i < size; i++) {
+            for (int i = 0; i < size; i++) {
                 System.out.print(tempNode.value);
-                if(i != size - 1) {
+                if (i != size - 1) {
                     System.out.print(" -> ");
                 }
                 tempNode = tempNode.next;
@@ -75,13 +77,13 @@ public class SingleLinkedList {
 
     // Search for a node
     public boolean searchNode(int nodeValue) {
-        if(head == null) {
+        if (head == null) {
             return false;
         } else {
             Node tempNode = head;
             int i = 0;
-            while(tempNode != null) {
-                if(tempNode.value == nodeValue) {
+            while (tempNode != null) {
+                if (tempNode.value == nodeValue) {
                     System.out.println("Node " + nodeValue + " found at location " + i);
                     return true;
                 }
@@ -100,13 +102,28 @@ public class SingleLinkedList {
     // 4. deleting at any location
 
     public void delete(int nodeValue) {
-        if(head == null) {
+        if (head == null) {
             System.out.println("Link list does not exist");
         } else if (head.value == nodeValue) {
             head = head.next;
-            size --;
+            size--;
         } else if (tail.value == nodeValue) {
-            
+            Node tempNode = head;
+            while (tempNode.next != tail) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = null;
+            tail = tempNode;
+            size--;
+        } else {
+            Node tempNode = head;
+            while (tempNode.next != null && tempNode.next.value != nodeValue) {
+                tempNode = tempNode.next;
+            }
+            if (tempNode.next != null) {
+                tempNode.next = tempNode.next.next;
+                size--;
+            }
         }
     }
 
@@ -117,9 +134,11 @@ public class SingleLinkedList {
         sll.insert(3, 2);
         sll.insert(4, 3);
         sll.traverse();
-        sll.insert(5,1);
+        sll.insert(5, 1);
         sll.traverse();
         sll.searchNode(3);
+        sll.delete(3);
+        sll.traverse();
     }
-    
+
 }
