@@ -33,6 +33,7 @@ public class UndoRedoManager<T> {
             currentState = currentState.next;
             return currentState.state;
         }
+        return currentState.state;
     }
 
     
