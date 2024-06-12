@@ -12,6 +12,8 @@ public class UndoRedoManager<T> {
     }
 
     private Node currentState;
+
+    // Implement undo method
     public T undo() {
         if (currentState.prev == null) {
             return null;
@@ -24,6 +26,15 @@ public class UndoRedoManager<T> {
     }
 
     // Implement redo method
+    public T redo() {
+        if (currentState.next == null) {
+            return null;
+        } else {
+            currentState = currentState.next;
+            return currentState.state;
+        }
+    }
+
     
 
     public void performAction( T newState) {
