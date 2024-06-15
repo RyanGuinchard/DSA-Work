@@ -46,7 +46,7 @@ public class TaskList {
     }
 
     // Print all tasks
-    public void printAllTasks() {
+    public void printTasks() {
         TaskNode tempNode = head;
         while(tempNode != null) {
             System.out.println(tempNode.task.getDescription() + " -> " + tempNode.task.isCompleted());
