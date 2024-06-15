@@ -2,6 +2,7 @@ package MidtermSprint;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class Main {
 
@@ -16,9 +17,19 @@ public class Main {
             System.out.println("4. Print Tasks");
             System.out.println("5. Print Users");
             System.out.println("6. Exit");
-            int choice = scanner.nextInt();
+
+            // Validating choice input
+            int choice;
+            try {
+                choice = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number from 1 to 6. \n");
+                scanner.next();
+                continue;
+            }
             scanner.nextLine();
 
+            // Initialize variables for user input
             String userName;
             String description;
 
