@@ -16,8 +16,9 @@ public class Main {
             System.out.println("3. Mark Task as Completed");
             System.out.println("4. Print Tasks");
             System.out.println("5. Print Users");
-            System.out.println("6. Exit");
+            System.out.println("6. Exit \n");
 
+            System.out.print("Enter your choice: ");
             // Validating choice input
             int choice;
             try {
@@ -35,26 +36,26 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Enter user name: ");
+                    System.out.print("Enter user name: ");
                     String name = scanner.nextLine();
                     createUser(name);
                     break;
                 case 2:
-                    System.out.println("Enter user name: ");
+                    System.out.print("Enter user name: ");
                     userName = scanner.nextLine();
-                    System.out.println("Enter task description: ");
+                    System.out.print("Enter task description: ");
                     description = scanner.nextLine();
                     addTask(userName, description);
                     break;
                 case 3:
-                    System.out.println("Enter user name: ");
+                    System.out.print("Enter user name: ");
                     userName = scanner.nextLine();
-                    System.out.println("Enter task description: ");
+                    System.out.print("Enter task description: ");
                     description = scanner.nextLine();
                     markTaskAsCompleted(userName, description);
                     break;
                 case 4:
-                    System.out.println("Enter user name: ");
+                    System.out.print("Enter user name: ");
                     userName = scanner.nextLine();
                     printUserTasks(userName);
                     break;
