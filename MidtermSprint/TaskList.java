@@ -28,6 +28,7 @@ public class TaskList {
         } else {
             tail.next = newNode;
             tail = newNode;
+            newNode.next = null;
             size++;
         }
     }
