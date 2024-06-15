@@ -63,7 +63,15 @@ public class Main {
         }
     }
 
+
+    // Start of methods for menu options
     public static void createUser(String name) {
+        // Check if user already exists
+        User existing = findUser(name);
+        if (existing != null) {
+            System.out.println("User already exists");
+            return;
+        }
         User user = new User(name);
         users.add(user);
     }

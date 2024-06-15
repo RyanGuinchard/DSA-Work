@@ -49,7 +49,9 @@ public class TaskList {
     public void printTasks() {
         TaskNode tempNode = head;
         while(tempNode != null) {
-            System.out.println(tempNode.task.getDescription() + " -> " + tempNode.task.isCompleted());
+            // Ternary for status of completion
+            String status = tempNode.task.isCompleted() ? "completed" : "pending";
+            System.out.println(tempNode.task.getDescription() + " - " + status);
             tempNode = tempNode.next;
         }
     }
