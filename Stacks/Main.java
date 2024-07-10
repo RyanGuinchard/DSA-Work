@@ -9,5 +9,8 @@ public class Main{
         stack.push(20);
         stack.push(30);
         stack.isEmpty();
+        stack.peek();
+        stack.pop();
+        stack.peek();
     }
 }
