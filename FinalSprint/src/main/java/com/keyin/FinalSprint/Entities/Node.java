@@ -15,5 +15,17 @@ public class Node {
         left = null;
         right = null;
     }
+
+    public int getValue() {
+        return value;
+    }
+
+    public Node getLeft() {
+        return left;
+    }
+
+    public Node getRight() {
+        return right;
+    }
 }
 
