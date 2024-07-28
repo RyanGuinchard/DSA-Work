@@ -1,9 +1,6 @@
 package com.keyin.FinalSprint.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 
 @Entity
@@ -12,8 +9,12 @@ public class TreeRecords {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String inputNumbers;
+
+    @Column(length = 2000)
     private String treeStructure;
 
+
+    // Getters and Setters
     public long getId() {
         return id;
     }

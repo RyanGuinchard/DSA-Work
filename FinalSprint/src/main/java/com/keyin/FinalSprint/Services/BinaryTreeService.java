@@ -12,6 +12,7 @@ public class BinaryTreeService {
 
     public void processUserNums(String nums) {
         String[] numArray = nums.split(",");
+        binaryTree = new BinaryTree();
         for (String num : numArray) {
             int numInt = Integer.parseInt(num);
             binaryTree.insert(numInt);

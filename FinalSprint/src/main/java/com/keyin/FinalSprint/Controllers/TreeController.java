@@ -25,7 +25,7 @@ public class TreeController {
         String treeJSON = binaryTreeService.convertTreeToJson(binaryTreeService.getBinaryTree().getRoot());
         treeRecordsService.saveTreeRecord(numbers, treeJSON);
         model.addAttribute("treeStructure", treeJSON);
-        return "result";
+        return "results";
     }
 
     @GetMapping("/previous-trees")

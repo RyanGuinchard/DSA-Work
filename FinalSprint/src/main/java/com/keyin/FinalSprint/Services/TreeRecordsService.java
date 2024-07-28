@@ -4,6 +4,7 @@ import com.keyin.FinalSprint.Entities.TreeRecords;
 import com.keyin.FinalSprint.Repositories.TreeRecordsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class TreeRecordsService {
@@ -18,7 +19,7 @@ public class TreeRecordsService {
         treeRecordsRepository.save(treeRecords);
     }
 
-    public <List> TreeRecords getAllTreeRecords() {
-        return (TreeRecords) treeRecordsRepository.findAll();
+    public List<TreeRecords> getAllTreeRecords() {
+        return treeRecordsRepository.findAll();
     }
 }
